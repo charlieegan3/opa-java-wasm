@@ -1,6 +1,6 @@
 [![CI](https://github.com/open-policy-agent/opa-java-wasm/workflows/CI/badge.svg)](https://github.com/open-policy-agent/opa-java-wasm)
 [![GitHub Release](https://img.shields.io/github/tag/open-policy-agent/opa-java-wasm.svg?style=flat&color=green)](https://github.com/open-policy-agent/opa-java-wasm/tags)
-[![Maven Central](https://maven-badges.sml.io/sonatype-central/io.github.open-policy-agent/opa-java-wasm/badge.svg?style=flat&color=green)](https://central.sonatype.com/artifact/io.github.open-policy-agent/opa-java-wasm)
+[![Maven Central](https://maven-badges.sml.io/sonatype-central/org.openpolicyagent/opa-java-wasm/badge.svg?style=flat&color=green)](https://central.sonatype.com/artifact/org.openpolicyagent/opa-java-wasm)
 
 # Open Policy Agent WebAssembly Java SDK
 
@@ -39,7 +39,7 @@ With Maven add the core module dependency:
 
 ```xml
 <dependency>
-    <groupId>io.github.open-policy-agent</groupId>
+    <groupId>org.openpolicyagent</groupId>
     <artifactId>opa-java-wasm</artifactId>
     <version>latest_release</version>
 </dependency>
@@ -47,7 +47,7 @@ With Maven add the core module dependency:
 
 <!--
 ```java
-//DEPS io.github.open-policy-agent:opa-java-wasm:999-SNAPSHOT
+//DEPS org.openpolicyagent:opa-java-wasm:999-SNAPSHOT
 
 var policyPath = Path.of("core/src/main/resources/demo-policy.wasm");
 var targetPath = Path.of("policy.wasm");
@@ -64,7 +64,7 @@ There are only a couple of steps required to start evaluating the policy.
 ### Import the module
 
 ```java
-import io.github.open_policy_agent.opa.wasm.OpaPolicy;
+import org.openpolicyagent.wasm.OpaPolicy;
 ```
 
 ### Load the policy
@@ -124,7 +124,7 @@ use.  It uses lock-free data structures internally, so it is safe to use with
 virtual threads (no carrier-thread pinning).
 
 ```java
-import io.github.open_policy_agent.opa.wasm.OpaPolicyPool;
+import org.openpolicyagent.wasm.OpaPolicyPool;
 
 var pool = OpaPolicyPool.create(
         () -> OpaPolicy.builder().withPolicy(policyWasm).build(),
